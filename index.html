@@ -40,7 +40,7 @@
         /* Header Styles */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://raw.githubusercontent.com/virkx3/virk/main/1.png') center/cover no-repeat;
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -246,6 +246,96 @@
             margin-right: 10px;
             margin-top: 5px;
             font-size: 1.2rem;
+        }
+        
+        /* Slideshow Styles */
+        .slideshow-section {
+            background-color: #f0f2f5;
+            padding: 80px 5%;
+            text-align: center;
+        }
+        
+        .slideshow-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 40px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            height: 500px;
+        }
+        
+        .mySlides {
+            display: none;
+            height: 100%;
+        }
+        
+        .mySlides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            vertical-align: middle;
+        }
+        
+        /* Caption text */
+        .slide-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            background: rgba(44, 62, 80, 0.85);
+            padding: 15px;
+            color: #f8f5e9;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        
+        /* Navigation arrows */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 20px;
+            margin-top: -30px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            transition: 0.3s;
+            user-select: none;
+            background: rgba(0,0,0,0.3);
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .next {
+            right: 0;
+            border-radius: 5px 0 0 5px;
+        }
+        
+        .prev:hover, .next:hover {
+            background: rgba(0,0,0,0.8);
+        }
+        
+        /* The dots/bullets/indicators */
+        .dots-container {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        
+        .active, .dot:hover {
+            background-color: #d4a017;
         }
         
         /* Location Section */
@@ -507,6 +597,11 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+        
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
             40% { transform: translateY(-20px) translateX(-50%); }
@@ -517,6 +612,7 @@
         @media (max-width: 992px) {
             .hero h1 { font-size: 3.5rem; }
             .about-content, .location-container { flex-direction: column; }
+            .slideshow-container { height: 400px; }
         }
         
         @media (max-width: 768px) {
@@ -525,6 +621,8 @@
             .nav-links { display: none; }
             .section-header h2 { font-size: 2.3rem; }
             .gallery { grid-template-columns: 1fr; }
+            .slideshow-container { height: 300px; }
+            .slide-caption { font-size: 1rem; }
         }
     </style>
 </head>
@@ -534,6 +632,7 @@
         <a href="#" class="logo"><i class="fas fa-home"></i> Virk Farm House</a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
+            <li><a href="#firozpur">Firozpur</a></li>
             <li><a href="#location">Location</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -592,6 +691,60 @@
                     </li>
                 </ul>
             </div>
+        </div>
+    </section>
+
+    <!-- Firozpur Slideshow Section -->
+    <section id="firozpur" class="slideshow-section">
+        <div class="section-header">
+            <h2>Discover Firozpur</h2>
+            <p>A historic city where tradition and progress blend beautifully</p>
+        </div>
+        
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+            <!-- Slide 1 -->
+            <div class="mySlides fade">
+                <img src="https://images.unsplash.com/photo-1560157361-99087a0c2b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Firozpur Fort">
+                <div class="slide-caption">Firozpur Fort - A historic military stronghold</div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="mySlides fade">
+                <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Saragarhi Memorial">
+                <div class="slide-caption">Saragarhi Memorial - Honoring the brave soldiers</div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="mySlides fade">
+                <img src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Golden Fields">
+                <div class="slide-caption">Golden Fields - The agricultural heartland of Punjab</div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="mySlides fade">
+                <img src="https://images.unsplash.com/photo-1556911220-ef412aea183c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Historic Gurudwara">
+                <div class="slide-caption">Historic Gurudwara - Spiritual center of the community</div>
+            </div>
+            
+            <!-- Slide 5 -->
+            <div class="mySlides fade">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Indo-Pak Border">
+                <div class="slide-caption">Indo-Pak Border - Where history meets patriotism</div>
+            </div>
+            
+            <!-- Navigation arrows -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        
+        <!-- The dots/circles -->
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
         </div>
     </section>
 
@@ -840,6 +993,45 @@
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
         });
+        
+        // Slideshow functionality
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+        
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+        
+        // Auto slide change every 5 seconds
+        setInterval(() => {
+            plusSlides(1);
+        }, 5000);
     </script>
 </body>
 </html>
